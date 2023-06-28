@@ -1,0 +1,919 @@
+:root {
+  --primary: #d14d72;
+  --bg: #fff;
+  --second: #fcc8d1;
+}
+
+/* Keseluruhan */
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: var(--primary);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: var(--primary);
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  font-style: italic;
+}
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+.navbar .navbar-nav a {
+  text-align: right;
+  color: #fff;
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0 1rem;
+}
+/* Efek setelah kursor diarahkan */
+.navbar .navbar-nav a:hover {
+  color: var(--second);
+}
+.navbar .nav a:hover {
+  color: var(--second);
+}
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--bg);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+.navbar .navbar-extra a {
+  color: var(--bg);
+  margin: 0 0.5rem;
+}
+.navbar .navbar-extra a:hover {
+  color: var(--bg);
+}
+/* hanya digunakan saat tampilan responsive ukuran table */
+#hamburger-menu {
+  display: none;
+}
+
+/* Landing Page Section */
+.land-page {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../img/land-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.land-page .content {
+  padding: 1.4rem 7%;
+  max-width: 60rem;
+}
+.land-page .content h1 {
+  font-size: 4rem;
+  color: var(--primary);
+  line-height: 1.2;
+}
+.land-page .content h1 span {
+  color: var(--primary);
+}
+.land-page .content p {
+  color: var(--primary);
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  line-height: 1.4;
+  font-weight: 400;
+}
+.land-page .content .cta {
+  margin-top: 3rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  color: var(--bg);
+  background-color: var(--primary);
+  border-radius: 0.5rem;
+}
+.land-page .content .cta:hover {
+  color: var(--second);
+}
+
+/* Article Section untuk di halaman index*/
+.article {
+  background-color: var(--bg);
+  padding: 5rem 7% 5rem;
+  position: relative;
+}
+.article .top-row {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  align-items: baseline;
+}
+.article .top-row h2 {
+  font-size: 3.5rem;
+  padding-left: 1.5rem;
+  line-height: 1.4;
+  text-align: left;
+  font-weight: 550;
+}
+.article .top-row .cta {
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  position: absolute;
+  right: 9rem;
+  color: var(--bg);
+  background-color: var(--primary);
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+}
+.article .top-row .cta:hover {
+  color: var(--second);
+}
+.article h2 {
+  margin-bottom: 4rem;
+  color: var(--primary);
+  text-align: center;
+  font-size: 3.5rem;
+}
+.article .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.article .row .content {
+  color: var(--primary);
+  text-align: center;
+  max-width: 20rem;
+  margin: auto;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  font-size: 1.8rem;
+  box-shadow: 0 0.65rem 5rem hsla(0, 0%, 0%, 0.2);
+  border-radius: 0.4rem;
+  overflow: hidden;
+}
+.article .row .content .article-img {
+  width: 100%;
+}
+.article .row .content .sub-title {
+  padding-top: 1rem;
+  margin-top: 2rem auto 0.5rem;
+}
+.article .row .content p {
+  text-align: left;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+}
+
+.article .row .content .btn {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.5rem;
+  color: var(--bg);
+  background-color: var(--primary);
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+.article .row .content .btn:hover {
+  color: var(--second);
+}
+
+/* Article-Page Tambahan ketika ditekan navbar article*/
+.article-page {
+  background-color: var(--bg);
+  display: flex;
+}
+.article-page h3 {
+  color: var(--primary);
+  font-size: 1.5rem;
+}
+.article-page h2 {
+  color: var(--primary);
+  text-align: left;
+  font-size: 2.6rem;
+}
+.article-page .content {
+  padding-left: 9rem;
+  padding-top: 5rem;
+  align-items: center;
+  text-align: left;
+}
+
+/* Article-Sub Section ketika ditekan READ MORE */
+.article-sub {
+  min-height: 100vh;
+  background-color: var(--bg);
+  padding: 1rem 7% 1.4rem;
+}
+.article-sub .row {
+  display: flex;
+}
+.article-sub .row .content {
+  color: var(--primary);
+  text-align: center;
+  max-width: 70rem;
+  margin: auto;
+  line-height: 1.6;
+  font-size: 1.5rem;
+}
+.article-sub .row .content .title {
+  margin-top: 2rem auto 0.5rem;
+}
+.article-sub .row .content .article-img {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  width: 30%;
+}
+.article-sub .row .content p {
+  text-align: justify;
+}
+.article-sub .row .content h5 {
+  color: var(--primary);
+  text-align: left;
+  padding-top: 2rem;
+  font-weight: 300;
+  margin-top: 2rem auto 0.5rem;
+}
+
+/* Video Section */
+.video {
+  background-color: var(--bg);
+  padding: 2rem 7% 4rem;
+}
+.video h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 3.5rem;
+  padding-bottom: 1.5rem;
+  color: var(--primary);
+}
+.video .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.video .row .content {
+  text-align: center;
+  max-width: 40rem;
+  margin: auto;
+  margin-bottom: 3rem;
+  font-size: 1.8rem;
+  box-shadow: 0 0.65rem 5rem hsla(0, 0%, 0%, 0.2);
+  border-radius: 0.5rem;
+}
+.video .row .content .vid {
+  width: 100%;
+  height: 25rem;
+  padding: 3rem 2rem 2rem;
+}
+.video .row .content .yt-title {
+  color: var(--primary);
+  text-align: left;
+  padding: 0 2rem 2rem;
+  margin-top: 2rem auto 0.5rem;
+}
+.video .row .content h6 {
+  color: var(--primary);
+  text-align: left;
+  padding: 0 2rem 2rem;
+  font-weight: 300;
+  margin-top: 2rem auto 0.5rem;
+}
+
+/* Video-Page Tambahan ketika ditekan navbar video*/
+.video-page {
+  background-color: var(--bg);
+  padding: 2rem 7% 4rem;
+}
+.video-page h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 3.5rem;
+  padding-bottom: 1.5rem;
+  color: var(--primary);
+}
+.video-page .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.video-page .row .content {
+  text-align: center;
+  max-width: 40rem;
+  margin: auto;
+  margin-bottom: 3rem;
+  font-size: 1.8rem;
+  box-shadow: 0 0.65rem 5rem hsla(0, 0%, 0%, 0.2);
+  border-radius: 0.5rem;
+}
+.video-page .row .content .vid {
+  width: 100%;
+  height: 25rem;
+  padding: 3rem 2rem 2rem;
+}
+.video-page .row .content .yt-title {
+  color: var(--primary);
+  text-align: left;
+  padding: 0 2rem 2rem;
+  margin-top: 2rem auto 0.5rem;
+}
+.video-page .row .content h6 {
+  color: var(--primary);
+  text-align: left;
+  padding: 0 2rem 2rem;
+  font-weight: 300;
+  margin-top: 2rem auto 0.5rem;
+}
+/* About section */
+.about {
+  min-height: 90vh;
+  background-color: var(--bg);
+  padding: 3rem 7% 1.4rem;
+}
+.about h2 {
+  text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 3rem;
+}
+.about h2 {
+  color: var(--primary);
+}
+.about .row {
+  display: flex;
+}
+.about .row .about-img {
+  flex: 1 1 30rem;
+  padding-left: 5rem;
+}
+.about .row .about-img img {
+  width: 80%;
+}
+.about .row .content {
+  flex: 1 1 35rem;
+  padding: 0 1rem;
+}
+.about .row .content h3 {
+  color: var(--primary);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.about .row .content p {
+  color: var(--primary);
+  margin-bottom: 0.8rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+/* About-Page Tambahan ketika ditekan navbar about*/
+.about-page {
+  min-height: 90vh;
+  background-color: var(--bg);
+  padding: 3rem 7% 1.4rem;
+}
+.about-page h2 {
+  text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 3rem;
+}
+.about-page h2 {
+  color: var(--primary);
+}
+.about-page .row {
+  display: flex;
+}
+.about-page .row .about-img {
+  flex: 1 1 30rem;
+  padding-left: 5rem;
+}
+.about-page .row .about-img img {
+  width: 80%;
+}
+.about-page .row .content {
+  flex: 1 1 35rem;
+  padding: 0 1rem;
+}
+.about-page .row .content h3 {
+  color: var(--primary);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.about-page .row .content p {
+  color: var(--primary);
+  margin-bottom: 0.8rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* About visi */
+.about-visi {
+  background-color: var(--bg);
+  padding: 1.5rem 7% 1.4rem;
+}
+.about-visi h2 {
+  text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 3rem;
+}
+.about-visi h2 {
+  color: var(--primary);
+}
+.about-visi .row {
+  display: flex;
+}
+.about-visi .row .content {
+  padding: 0 1rem;
+  max-width: 70rem;
+}
+.about-visi .row .content p {
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 0.8rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* About Misi */
+.about-misi {
+  background-color: var(--bg);
+  padding: 1.5rem 7% 1.4rem;
+}
+.about-misi h2 {
+  text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 3rem;
+}
+.about-misi h2 {
+  color: var(--primary);
+}
+.about-misi .row {
+  display: flex;
+  justify-content: center;
+}
+.about-misi .row .content {
+  padding: 0 1rem;
+  max-width: 70rem;
+}
+.about-misi .row .content li {
+  color: var(--primary);
+  margin-bottom: 0.8rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* About Team NPM kelompok*/
+.team {
+  background-color: var(--bg);
+  padding: 2rem 7% 1.4rem;
+}
+.team .row {
+  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.team h2 {
+  text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 3rem;
+}
+.team .card {
+  width: 15.7rem;
+  text-align: center;
+  background: var(--primary);
+  padding: 1.3rem 0.3rem;
+  margin-bottom: 5rem;
+  border-radius: 0.63rem;
+  transition: 0.3s;
+}
+.team .card .content .img img {
+  padding: 0.3rem 0;
+  height: 12rem;
+  color: white;
+}
+.team .card .content .title {
+  padding: 0.3rem 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--bg);
+  transition: 0.3s;
+}
+
+/* Contact Section */
+.contact {
+  min-height: 100vh;
+  padding: 3.75rem 6.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.contact h2 {
+  text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 3rem;
+}
+.contact .content {
+  max-width: 50rem;
+  text-align: center;
+}
+.contact .content h2 {
+  text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 3rem;
+  color: var(--primary);
+}
+/* Contact-Page Tambahan ketika ditekan navbar contact*/
+.contact-page {
+  min-height: 100vh;
+  padding: 3.75rem 6.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.contact-page h2 {
+  text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 3rem;
+}
+.contact-page .content {
+  max-width: 50rem;
+  text-align: center;
+}
+.contact-page .content h2 {
+  text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 3rem;
+  color: var(--primary);
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
+.row .contactInfo {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.row .contactInfo .box {
+  position: relative;
+  padding: 1.25rem 0;
+  display: flex;
+}
+.row .contactInfo .box .icon {
+  min-width: 3.75rem;
+  height: 3.75rem;
+  background: var(--primary);
+  color: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 1.4rem;
+}
+.row .contactInfo .box .text {
+  display: flex;
+  margin-left: 1.25rem;
+  font-size: 1.5rem;
+  color: var(--primary);
+  flex-direction: column;
+  font-weight: 400;
+}
+.row .contactInfo .box .text h3 {
+  font-weight: 700;
+  color: var(--primary);
+}
+.contactForm {
+  width: 40%;
+  padding: 2.5rem;
+  background: var(--primary);
+}
+.contactForm h2 {
+  font-size: 1.9rem;
+  color: var(--bg);
+}
+.contactForm .inputBox {
+  position: relative;
+  width: 100%;
+  margin-top: 0.6rem;
+}
+/* Contact Form input design */
+.contactForm .inputBox input {
+  background-color: var(--primary);
+  width: 100%;
+  padding: 0.3rem 0;
+  font-size: 1rem;
+  margin: 0.3rem 0;
+  border: none;
+  border-bottom: 0.1rem solid var(--second);
+  outline: none;
+  resize: none;
+}
+.contactForm .inputBox span {
+  position: absolute;
+  left: 0;
+  padding: 0.3rem 0;
+  font-size: 1rem;
+  margin: 0.6rem;
+  pointer-events: none;
+  transition: 0.5s;
+  color: var(--second);
+}
+.contactForm .inputBox input:focus ~ span,
+.contactForm .inputBox input:valid ~ span {
+  color: var(--bg);
+  font-size: 0.75rem;
+  transform: translateY(-1.3rem);
+}
+.contactForm .inputBox input[type="submit"] {
+  width: 6.3rem;
+  background: var(--bg);
+  color: var(--primary);
+  border: none;
+  cursor: pointer;
+  padding: 0.6rem;
+  font-size: 1.1rem;
+}
+
+/*Footer*/
+footer {
+  background-color: #89375f;
+  text-align: center;
+  padding: 5rem 0 3rem;
+  margin-top: 3rem;
+}
+footer .links a:hover {
+  color: var(--second);
+}
+footer .links {
+  margin-bottom: 1.4rem;
+}
+footer .links a {
+  color: var(--bg);
+  padding: 0.7rem 1rem;
+  font-size: 1.2rem;
+}
+footer .credit {
+  font-size: 0.9rem;
+}
+footer .credit a {
+  color: var(--bg);
+  font-weight: 700;
+}
+footer .credit p {
+  color: var(--bg);
+}
+
+/* Tanda untuk kembali ke atas */
+.go-top {
+  position: fixed;
+  bottom: 0;
+  right: 1rem;
+  background: var(--primary);
+  color: #fff;
+  padding-top: 0.4rem;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  visibility: hidden;
+  border-radius: 0.5rem;
+  opacity: 0;
+  transition: 0.15s ease;
+}
+.go-top.active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-0.9rem);
+}
+.go-top:is(:hover, :focus) {
+  transform: translateY(-1.7rem);
+}
+
+/* Set tampilan responsif */
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+/* Tablet */
+@media (max-width: 758px) {
+  /* Tampilan keseluruhan */
+  html {
+    font-size: 62.5%;
+  }
+
+  /* Tampilan Navbar */
+  #hamburger-menu {
+    display: inline-block;
+  }
+  .navbar {
+    position: fixed;
+  }
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: var(--primary);
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+  .navbar .navbar-nav a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+
+  /* Tampilan Landing Page */
+  .land-page {
+    min-height: 90vh;
+    background-image: none;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .land-page .content {
+    padding: 15rem 10%;
+    margin: auto;
+    text-align: center;
+    max-width: 90rem;
+  }
+  .land-page .content h1 {
+    color: var(--primary);
+    line-height: 1.2;
+  }
+  .land-page .content p {
+    color: #fff;
+    font-size: 1.6rem;
+    margin-top: 2rem;
+    line-height: 1.4;
+    font-weight: 100;
+    mix-blend-mode: difference;
+  }
+  .land-page .content .cta {
+    margin-top: 3rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.4rem;
+    color: #fff;
+    background-color: var(--primary);
+    border-radius: 0.5rem;
+  }
+  .land-page .content .cta:hover {
+    color: var(--bg);
+  }
+
+  /* Tampilan Article */
+  .article .row {
+    flex-wrap: wrap;
+  }
+  .article .top-row .cta {
+    display: none;
+  }
+  .article .row .content {
+    padding: 0;
+  }
+  .article .row .content h4 {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+  .article .row .content p {
+    font-size: 1.6rem;
+  }
+
+  /* Article-Sub Section ketika ditekan READ MORE */
+  .article-sub .row {
+    padding-top: 3rem;
+    flex-wrap: wrap;
+  }
+  .article-sub .row .content .title {
+    font-size: 2rem;
+  }
+  .article-sub .row .content {
+    padding: 0;
+  }
+  .article-sub .row .content p {
+    font-size: 1.3rem;
+  }
+  .article-sub .row .content .article-img {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: 40%;
+  }
+
+  /* Article-Page Tambahan ketika ditekan navbar article*/
+  .article-page .content {
+    padding-top: 8rem;
+  }
+  .article-page h3 {
+    font-size: 1.2rem;
+  }
+  .article-page h2 {
+    font-size: 2rem;
+  }
+
+  /* Tampilan Video */
+  .video .row {
+    flex-wrap: wrap;
+  }
+
+  /* Video-Page tambahan ketika ditekan navbar video */
+  .video-page h2 {
+    padding-top: 8rem;
+  }
+  /* Tampilan About */
+  .about .row {
+    flex-wrap: wrap;
+  }
+
+  .about .row .about-img img {
+    object-fit: cover;
+    object-position: center;
+  }
+  .about .row .content {
+    padding: 0;
+    padding-bottom: 2rem;
+  }
+  .about .row .content h3 {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+  .about .row .content p {
+    font-size: 1.6rem;
+  }
+
+  /* about-Page tambahan ketika ditekan navbar about*/
+  .about-page h2 {
+    padding-top: 8rem;
+  }
+  /* Tampilan Contact */
+  .contact {
+    padding: 3rem;
+  }
+  /* about-Page tambahan ketika ditekan navbar about*/
+  .contact-page h2 {
+    padding-top: 8rem;
+  }
+  .row {
+    flex-direction: column;
+  }
+  .row .contactInfo {
+    margin-bottom: 2.5rem;
+  }
+  .row .contactInfo,
+  .contactForm {
+    width: 100%;
+  }
+}
+/* Mobile */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
